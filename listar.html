@@ -1,0 +1,45 @@
+<!-- <div ng-include src="'editar.html'" ng-controller="ListarController"></div> -->
+
+<div class="row">
+  <div class="container">
+    <h1>Lista de personas</h1>
+    <div ng-controller="ListarController">
+
+
+
+<form class="form-horizontal alert alert-warning" id="editForm" ng-submit="updateInfo(currentUser)">
+<h3 class="text-center">Actualizar persona</h3>
+<label for="Nombre">Nombre:</label>
+<input type="text" class="form-control" ng-model="currentUser.nombre" value="{{currentUser.nombre}}">
+
+<label for="NIF">NIF:</label>
+<input type="text" class="form-control" ng-model="currentUser.nif" value="{{currentUser.nif}}">
+
+<button class="btn btn-warning">Actualizar</button>
+
+</form>
+
+
+<!-- pruebas: {{currentUser.id}}, {{currentUser.nombre}}, {{currentUser.nif}} -->
+      <input type="text" ng-model="searchFilter" class="form-control">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>NIF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="students in data | filter:searchFilter">
+            <td>{{students.id}}</td>
+            <td>{{students.nombre}}</td>
+            <td>{{students.nif}}</td>
+            <td><button class="btn btn-warning" ng-click="editInfo(students)" title="Editar"><span class="glyphicon glyphicon-edit"></span></button></td>
+            <td><button class="btn btn-danger" ng-click="deleteInfo(students)" title="Eliminar"><span class="glyphicon glyphicon-trash"></span></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

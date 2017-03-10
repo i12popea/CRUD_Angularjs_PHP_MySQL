@@ -1,0 +1,10 @@
+    <form class="form-horizontal alert alert-warning" name="personaList" id="personaForm" ng-submit="insertInfo(personaInfo);">
+      <h3 class="text-center">Inserta una persona</h3>
+      <label for="Name">Nombre de la persona:</label>
+      <input type="text" name="nombre_persona" class="form-control" placeholder="Introduce el nombre de la persona" ng-model="personaInfo.nombre" autofocus required />
+
+      <label for="Name">NIF de la persona:</label>
+      <input type="text" name="nif_persona" class="form-control" placeholder="Introduce el nif de la persona" ng-model="personaInfo.nif" autofocus required />
+
+      <button class="btn btn-warning" ng-disabled="personaList.$invalid">Introducir</button>
+    </form>
